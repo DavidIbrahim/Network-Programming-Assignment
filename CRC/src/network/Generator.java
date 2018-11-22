@@ -22,12 +22,12 @@ public class Generator {
         // convert msg string 2 bitset
         for(int i=0;i<M_length;i++)
             if(x.charAt(i)=='1')
-                Message.set(M_length+G_length-i-2);
+                Message.set(M_length-i-1);
 
         // convert generator string 2 bitset
         for(int i=0;i<G_length;i++)
             if(generatorFn.charAt(i)=='1')
-                generatorBitset.set(M_length+G_length-i-2);
+                generatorBitset.set(M_length-i-1);
 
         // xor operation
 
@@ -41,8 +41,8 @@ public class Generator {
 
         }
         // convert reminder bit set  2 string
-        for(int i=0;i<Message.length();i++)
-            if(Message.get(Message.length()-i-1))
+         for(int i=1;i<G_length;i++)
+            if(Message.get(G_length-i-1))
                 Rem=Rem+"1";
             else
                 Rem=Rem+"0";
