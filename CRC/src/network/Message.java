@@ -7,6 +7,9 @@ public class Message {
         this.messageString = messageString;
     }
     public boolean alter(int position){
+        //receive indexing from one
+        position--;
+
         if(position>= messageString.length())
             return false;
         if(messageString.charAt(position)=='0'){
