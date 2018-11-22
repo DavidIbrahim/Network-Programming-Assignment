@@ -18,8 +18,10 @@ public class NetworkClient {
     }
 
     public String setMessageToBeSent(String message) {
-        String remainder = generator.calculateRemainder(message);
-        String messageToBeSentString = message + remainder;
+
+        //String remainder = generator.calculateRemainder(message);
+      //  String messageToBeSentString = message + remainder;
+        String messageToBeSentString = generator.generateMessage(message);
         this.messageToBeSent =new Message(messageToBeSentString);
         return messageToBeSentString;
     }
